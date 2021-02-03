@@ -1,0 +1,10 @@
+---
+title: "Biol 381 - Computational Biology"
+author: "Emma Gagne"
+date: "Spring 2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```Homework_02.Rmd
