@@ -8,6 +8,6 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-[Homework_02](https://emmagagne.github.io/Homework_02/)
+[Homework_02.Rmd](https://emmagagne.github.io/Homework_02/)
 
 
