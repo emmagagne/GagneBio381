@@ -8,7 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-This is where you will find all projects for Computational Biology, BIOL 381. Homework assignments are posted below. Welcome to my page!
+This is where you will find all projects for Computational Biology, BIOL
+381. Homework assignments are posted below. Welcome to my page!
 
 [Homework_02.Rmd](https://emmagagne.github.io/Homework_02/)
