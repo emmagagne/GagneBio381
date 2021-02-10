@@ -13,7 +13,10 @@ knitr::opts_chunk$set(echo = TRUE)
 This is where you will find all projects for Computational Biology, BIOL
 381. Homework assignments are posted below. Welcome to my page!
 
+# Research Page
+[My Webpage](https://emmagagne.github.io/EmmaGagne)
+
 # Weekly Homework
-[Homework_02.Rmd](https://emmagagne.github.io/Homework_02/)  
-[Homework_03.Rmd](https://emmagagne.github.io/Homework_03/)
+[Homework 02](https://emmagagne.github.io/Homework_02/)  
+[Homework 03](https://emmagagne.github.io/Homework_03/)
 
