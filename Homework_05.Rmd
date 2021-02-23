@@ -1,8 +1,18 @@
-# Homework #5
-# 18 February 2021
-# EKG
-#----------------------------------------
+---
+title: "Homework 5"
+author: "Emma Gagne"
+date: "23 February 2021"
+output: 
+  html_document: 
+    theme: readable
+---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Problem #1
+```
 # Problem 1: Suppose x = 1.1, a = 2.2, and b = 3.3. 
 # Assign each expression to the value of the variable z
 # and print the value stored in z
@@ -16,7 +26,10 @@ z <- (x^a)^b
 print(z)
 z <- 3*x^3+2*x^2+1
 print(z)
+```
 
+## Problem #2
+```
 # Problem 2: Using the rep and seq functions, 
 # create the following vectors.
 
@@ -30,7 +43,10 @@ print(b)
 z <- c(5:1)
 c <- rep(x=z,times=1:5)
 print(c)
+```
 
+## Problem #3
+```
 # Problem 3: Create a vector of two random uniform numbers. 
 # Using one of R’s inverse trigonometry functions
 #(asin(), acos(), or atan()), convert these numbers into polar 
@@ -42,7 +58,10 @@ r <- (z[1]^2+z[2]^2)^1/2
 theta <- atan(z[2]/z[1])
 polar_vec <- c(r,theta)
 print(polar_vec)
+```
 
+## Problem #4
+```
 # Problem 4: Using R expressions, update the queue successively
 
 queue <- c("sheep", "fox", "owl", "ant")
@@ -74,7 +93,10 @@ print(queue)
 
 # Finally, determine the position of the aphid in the line.
 which(queue=="aphid")
+```
 
+## Problem #5
+```
 # Problem 5: Use R to create a vector of all of the integers 
 # from 1 to 100 that are not divisible by 2, 3, or 7.
 
@@ -82,3 +104,4 @@ x <- c(1:100)
 print(x)
 Filter(function(i) { all(i %% c(2,3,7) != 0) }, seq(100))
 
+```
