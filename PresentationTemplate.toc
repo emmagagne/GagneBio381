@@ -1,3 +1,7 @@
-\beamer@sectionintoc {1}{First Section}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Subsection Example}{3}{0}{1}
-\beamer@sectionintoc {2}{Second Section}{9}{0}{2}
+\beamer@sectionintoc {1}{Bottlenose Dolphin Communication}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Acoustics}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Types of Calls}{3}{0}{1}
+\beamer@sectionintoc {2}{Boat Presence and Stress}{3}{0}{2}
+\beamer@subsectionintoc {2}{1}{COVID-19 Boat Presence}{3}{0}{2}
+\beamer@subsectionintoc {2}{2}{Impacts}{3}{0}{2}
+\beamer@sectionintoc {3}{Importance}{3}{0}{3}
