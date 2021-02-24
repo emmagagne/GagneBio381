@@ -19,7 +19,7 @@ This is where you will find all projects for Computational Biology, BIOL
 # Weekly Homework
 [Homework 02](https://emmagagne.github.io/Homework_02/)  
 [Homework 03](https://emmagagne.github.io/Homework_03/)  
-[Homework 04, Typora](Homework04.html)  
+[Homework 04, Typora](First_Typora.html)  
 [Homework 04, Letter Template](LetterTemplate.pdf)  
 [Homework 04, Presentation Template](PresentationTemplate.pdf)  
 [Homework 05](Homework_05.html)  
