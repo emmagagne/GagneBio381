@@ -4,7 +4,7 @@ author: "Emma Gagne"
 date: "Spring 2021"
 output: 
   html_document: 
-    remote theme: mmistakes/minimal-mistakes
+    remote theme: minimal-mistakes@4.21.0
 ---
 
 ```{r setup, include=FALSE}
