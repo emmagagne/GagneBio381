@@ -22,10 +22,15 @@ b <- 3.3
 
 z <- x^a^b
 print(z)
+[1] 3.61714
+
 z <- (x^a)^b
 print(z)
+[1] 1.997611
+
 z <- 3*x^3+2*x^2+1
 print(z)
+[1] 7.413
 ```
 
 ## Problem #2
@@ -35,14 +40,17 @@ print(z)
 
 z <- c(1:8,7:1)
 print(z)
+[1] 1 2 3 4 5 6 7 8 7 6 5 4 3 2 1
 
 z <- c(1:5)
 b <- rep(x=z,times=z)
 print(b)
+[1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5
 
 z <- c(5:1)
 c <- rep(x=z,times=1:5)
 print(c)
+[1] 5 4 4 3 3 3 2 2 2 2 1 1 1 1 1
 ```
 
 ## Problem #3
@@ -54,10 +62,13 @@ print(c)
 
 z <- runif(2)
 print(z)
+[1] 0.1297267 0.8595624
+
 r <- (z[1]^2+z[2]^2)^1/2
 theta <- atan(z[2]/z[1])
 polar_vec <- c(r,theta)
 print(polar_vec)
+[1] 0.3778383 1.4210050
 ```
 
 ## Problem #4
@@ -66,33 +77,41 @@ print(polar_vec)
 
 queue <- c("sheep", "fox", "owl", "ant")
 print(queue)
+[1] "sheep" "fox"   "owl"   "ant"  
 
 # the serpent arrives and gets in line;
 queue[5] <- "serpent" 
 print(queue)
+[1] "sheep"   "fox"     "owl"     "ant"     "serpent"
 
 # the sheep enters the ark;
 queue <- queue[-c(1)]
 print(queue)
+[1] "fox"     "owl"     "ant"     "serpent"
 
 # the donkey arrives and talks his way to the front of the line
 queue <- c("donkey",queue[1:4])
 print(queue)
+[1] "donkey"  "fox"     "owl"     "ant"     "serpent"
                
 # the serpent gets impatient and leaves;
 queue <- c(queue[1:4])
 print(queue)
+[1] "donkey" "fox"    "owl"    "ant"  
 
 # the owl gets bored and leaves;
 queue <- c(queue[1:2],queue[4])
 print(queue)
+[1] "donkey" "fox"    "ant" 
 
 # the aphid arrives and the ant invites him to cut in line.
 queue <- c(queue[1:2],"aphid",queue[3])
 print(queue)
+[1] "donkey" "fox"    "aphid"  "ant" 
 
 # Finally, determine the position of the aphid in the line.
 which(queue=="aphid")
+[1] 3
 ```
 
 ## Problem #5
@@ -102,6 +121,17 @@ which(queue=="aphid")
 
 x <- c(1:100)
 print(x)
+[1]   1   2   3   4   5   6   7   8   9  10  11  12  13  14
+ [15]  15  16  17  18  19  20  21  22  23  24  25  26  27  28
+ [29]  29  30  31  32  33  34  35  36  37  38  39  40  41  42
+ [43]  43  44  45  46  47  48  49  50  51  52  53  54  55  56
+ [57]  57  58  59  60  61  62  63  64  65  66  67  68  69  70
+ [71]  71  72  73  74  75  76  77  78  79  80  81  82  83  84
+ [85]  85  86  87  88  89  90  91  92  93  94  95  96  97  98
+ [99]  99 100
+ 
 Filter(function(i) { all(i %% c(2,3,7) != 0) }, seq(100))
+[1]  1  5 11 13 17 19 23 25 29 31 37 41 43 47 53 55 59 61 65
+[20] 67 71 73 79 83 85 89 95 97
 
 ```

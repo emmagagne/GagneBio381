@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.15)  28 FEB 2021 11:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.15)  2 MAR 2021 11:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -188,7 +188,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 <MySignature.jpg, id=2, 3019.28pt x 1059.96pt>
 File: MySignature.jpg Graphic file (type jpg)
 <use MySignature.jpg>
-Package pdftex.def Info: MySignature.jpg  used on input line 108.
+Package pdftex.def Info: MySignature.jpg  used on input line 114.
 (pdftex.def)             Requested size: 452.87247pt x 158.98714pt.
 [1
 
@@ -197,14 +197,14 @@ Package pdftex.def Info: MySignature.jpg  used on input line 108.
 Here is how much of TeX's memory you used:
  1826 strings out of 481250
  31869 string characters out of 5914717
- 572361 words of memory out of 5000000
+ 489241 words of memory out of 5000000
  18768 multiletter control sequences out of 15000+600000
  403430 words of font info for 27 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 71i,11n,75p,270b,214s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,11n,75p,814b,214s stack positions out of 5000i,500n,10000p,200000b,80000s
 </Users/em
 magagne/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on LettertoPolicyMakerSC.pdf (1 page, 719308 bytes).
+Output written on LettertoPolicyMakerSC.pdf (1 page, 720205 bytes).
 PDF statistics:
  14 PDF objects out of 1000 (max. 8388607)
  7 compressed objects within 1 object stream
