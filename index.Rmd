@@ -23,9 +23,6 @@ This is where you will find all projects for Computational Biology, BIOL
 [Homework 04, Letter Template](LetterTemplate.pdf)  
 [Homework 04, Presentation Template](PresentationTemplate.pdf)  
 [Homework 05](Homework_05.html)  
-[Homework 06](Homework_06.html)
-
-
-
-
+[Homework 06](Homework_06.html)  
+[Homework 07](Homework07.html)
 
