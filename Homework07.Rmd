@@ -2,9 +2,9 @@
 title: "Homework 07"
 author: "Emma Gagne"
 date: "9 March 2021"
-output:
-  html_document: 
-    jekyll_remote_theme: minimal-mistakes@4.21.0
+output: 
+  html_document:
+    theme: readable
 ---
 ### Simulating and Fitting Data Distributions
 ```

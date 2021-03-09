@@ -3,8 +3,8 @@ title: "Biol 381 - Computational Biology"
 author: "Emma Gagne"
 date: "Spring 2021"
 output: 
-  html_document: 
-    jekyll_remote_theme: minimal-mistakes@4.21.0
+  html_document:
+    theme: readable
 ---
 
 ```{r setup, include=FALSE}
