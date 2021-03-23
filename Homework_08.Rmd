@@ -83,7 +83,7 @@ print(ANOPlot)
 ```
 
 The resulting box plot looks like this;  
-
+![box plot](https://github.com/emmagagne/GagneBio381/blob/main/homework8plot.png?raw=true)
 
 ## Playing with the Fake Data
 
