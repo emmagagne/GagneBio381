@@ -7,9 +7,6 @@ output:
     theme: readable
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 This is where you will find all projects for Computational Biology, BIOL
 381. Homework assignments are posted below. Welcome to my page!
 
@@ -18,12 +15,40 @@ This is where you will find all projects for Computational Biology, BIOL
 
 # Weekly Homework
 [Homework 02](https://emmagagne.github.io/Homework_02/)  
+Linking a web page to local repository.
+
+
 [Homework 03](https://emmagagne.github.io/Homework_03/)  
+Regular expression puzzles using the find and search feature in BBEdit.
+
+
 [Homework 04, Typora](First_Typora.html)  
+Learning how to use a Typora document.
+
+
 [Homework 04, Letter Template](LetterTemplate.pdf)  
+Learning how to use Sweave in order to create a letter template. 
+
+
 [Homework 04, Presentation Template](PresentationTemplate.pdf)  
+Using Sweave yet again to create a presentation template. 
+
+
 [Homework 05](Homework_05.html)  
+Playing with vectors.
+
+
 [Homework 06](Homework_06.html)  
+Playing with matrices and data frames.
+
+
 [Homework 07](Homework07.html)  
-[Homework 08](Homework_08.html)
-[Homework 09](Homework_09.html)
+Simulating and fitting data distributions, creating histograms. 
+
+
+[Homework 08](Homework_08.html)  
+Creating a fake data set using research from my lab.
+
+
+[Homework 09](Homework_09.html)  
+Using what we learned in controlled structure programming to re-organize and design homework 08.
