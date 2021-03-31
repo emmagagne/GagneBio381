@@ -171,4 +171,4 @@ regression_plot()
 ```
 
 The resulting regression line obtained:
-
+![linreg](https://github.com/emmagagne/GagneBio381/blob/main/linreg.png?raw=true)
