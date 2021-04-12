@@ -2,12 +2,12 @@
 title: "Computational Biology (BIO 381)"
 author: "Emma Gagne"
 date: "Spring 2021"
-output: 
-  html_document:
-    theme: readable
+output:
+  prettydoc::html_pretty:
+    theme: hpstr
 ---
 
-![me](https://github.com/emmagagne/GagneBio381/blob/main/headshot.jpg?raw=true)
+![](https://github.com/emmagagne/GagneBio381/blob/main/headshot.jpg?raw=true)
 
 This is where you will find all projects for Computational Biology, BIOL
 381. Homework assignments are posted below. Welcome to my page!
@@ -55,5 +55,5 @@ Creating a fake data set using research from my lab.
 [Homework 09](Homework_09.html)  
 Using what we learned in controlled structure programming to re-organize and design homework 08.
 
-[Homework 10](Homework_10.html)
+[Homework 10](Homework_10.html)  
 Using for loops, subsetting, comparing randomization tests to stasticial analyses. 
