@@ -4,65 +4,16 @@ author: "Emma Gagne"
 date: "4/12/2021"
 output:
   prettydoc::html_pretty:
-    theme: hpstr
+    theme: cerulian
 ---
 
 ## Batch processing
-### Build a set of random files
+
+Repeat the exercise from the Batch Processing Lecture (13 April), but do it using real data sets rather than purely simulated. Check with folks in your lab to see if there are multiple data sets available for analysis, or ask Nick or Lauren for suggestions for other data sources. Stick to simple data analyses and graphics, but try to set it up as a batch process that will work on multiple files and save summary results to a common file.
+
+I'm using data from my own project. The folder consists of two files, low frequency as a function of high frequency prior to COVID lockdowns as compared to whistles during COVID lockdowns. 
 
 ```
-##################################################
-# function: FileBuilder
-# create a set of random files for regression
-# input: fileN = number of files to create
-#       : fileFolder = name of folder for random files
-#       : fileSize = c(min,max) number of rows in file
-#       : fileNA = number on average of NA values per column
-# output: set of random files
-#------------------------------------------------- 
-FileBuilder <- function(fileN=10,
-                        fileFolder="RandomFiles/",
-                        fileSize=c(15,100),
-                        fileNA=3){
-for (i in seq_len(fileN)) {
-fileLength <- sample(fileSize[1]:fileSize[2],size=1) # get number of rows
-varX <- runif(fileLength) # create random x
-varY <- runif(fileLength) # create randon y
-dF <- data.frame(varX,varY) # bind into a data frame
-badVals <- rpois(n=1,lambda=fileNA) # determine NA number
-dF[sample(nrow(dF),size=badVals),1] <- NA # random NA in varX
-dF[sample(nrow(dF),size=badVals),2] <- NA # random NA in varY
-
-# create label for file name with padded zeroes
-fileLabel <- paste(fileFolder,
-                       "ranFile",
-                       formatC(i,
-                       width=3,
-                       format="d",
-                       flag="0"),
-                       ".csv",sep="")
-
-# set up data file and incorporate time stamp and minimal metadata
-write.table(cat("# Simulated random data file for batch processing","\n",
-                    "# timestamp: ",as.character(Sys.time()),"\n",
-                    "# NJG","\n",
-                    "# ------------------------", "\n",
-                    "\n",
-                    file=fileLabel,
-                    row.names="",
-                    col.names="",
-                    sep=""))
-
-# now add the data frame
-write.table(x=dF,
-            file=fileLabel,
-            sep=",",
-            row.names=FALSE,
-            append=TRUE)
-
-
-}
-}
 Run regression model and extract stats
 ##################################################
 
@@ -83,49 +34,47 @@ regStats <- function(d=NULL) {
                     pVal=.$coefficients[2,4],
                     r2=.$r.squared)
   return(statsList)
-
 }
-Body of script for batch processing of regression models
+
+# Body of script for batch processing of regression models
 library(TeachingDemos)
-char2seed("Freezing March")
 
 #--------------------------------------------
 # Global variables
-fileFolder <- "RandomFiles/"
-nFiles <- 100
+file_folder <- "dolphinData/"
+file_names <- list.files(path=file_folder)
+nFiles <- 2
 fileOut <- "StatsSummary.csv"
-#--------------------------------------------
-
-# Create 100 random data sets
-FileBuilder(fileN=nFiles)
-fileNames <- list.files(path=fileFolder)
+#-----------------------------------------------------
 
 # Create data frame to hold file summary statistics
-ID <- seq_along(fileNames)
-fileName <- fileNames
-slope <- rep(NA,nFiles)
-pVal <- rep(NA,nFiles)
-r2 <- rep(NA,nFiles)
+ID <- seq_along(file_names)
+file_name <- file_names
+slope <- rep(NA,length(file_names))
+p_val <- rep(NA,length(file_names))
+r2 <- rep(NA,length(file_names))
 
-statsOut <- data.frame(ID,fileName,slope,pVal,r2)
+statsOut <- data.frame(ID,file_name,slope,p_val,r2)
+statsOut
 
-# batch process by looping through individual files
-for (i in seq_along(fileNames)) {
-  data <- read.table(file=paste(fileFolder,fileNames[i],sep=""),
-                     sep=",",
-                     header=TRUE) # read in next data file
+# batch processing
+for (i in seq_along(file_names)) {
+  data <- read.table(file=paste(file_folder,file_names[i],
+                                sep=""),
+                                sep=",",
+                                header=TRUE)
+  d_clean <- data[complete.cases(data),] # subset for clean cases (no NAs)
   
-  dClean <- data[complete.cases(data),] # get clean cases
-  
-  . <- regStats(dClean) # pull regression stats from clean file
+  . <- regStats(d_clean) # pull out regression stats from clean file
   statsOut[i,3:5] <- unlist(.) # unlist, copy into last 3 columns
-  
 }
+
+
 # set up output file and incorporate time stamp and minimal metadata
   write.table(cat("# Summary stats for ",
                     "batch processing of regression models","\n",
                     "# timestamp: ",as.character(Sys.time()),"\n",
-                    "# NJG","\n",
+                    "# EKG","\n",
                     "# ------------------------", "\n",
                     "\n",
                     file=fileOut,
@@ -140,4 +89,14 @@ for (i in seq_along(fileNames)) {
               col.names=TRUE,
               sep=",",
               append=TRUE)
+              
+print(statsOut)
 ```
+```
+> print(statsOut)
+  ID    file_name     slope        p_val        r2
+1  1  dbcovid.csv 0.5892221 9.063379e-05 0.1069172
+2  2 dbprecov.csv 0.3726289 3.525408e-03 0.0608949
+```
+
+
