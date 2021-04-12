@@ -349,7 +349,7 @@ plot_ran_test <- function(z=NULL) {
 # -----------------------------------------------------
  plot_ran_test()
 ```
- 
+![plot_ran_test](https://github.com/emmagagne/GagneBio381/blob/main/plot_ran_test().png?raw=true)
 ```
 # Run Analysis ----------------------------------
 
@@ -366,6 +366,7 @@ slopes <- list(x_obs,x_sim)
 get_pval(slopes)
 plot_ran_test(slopes)
 ```
+![plot_ran_test_slopes](https://github.com/emmagagne/GagneBio381/blob/main/plot_ran_test(slopes).png?raw=true)
 
 ## Question 5
 For comparison, calculate in R the standard statistical analysis you would use with these data. How does the p-value compare for the standard test versus the p value you estimated from your randomization test? If the p values seem very different, run the program again with a different starting seed (and/or increase the number of replications in your randomization test). If there are persistent differences in the p value of the standard test versus your randomization, what do you think is responsible for this difference?
