@@ -75,3 +75,78 @@ plot_data()
 # The resulting box plot looks like this;  
 # ![box plot](https://github.com/emmagagne/GagneBio381/blob/main/homework8plot.png?raw=true)
 
+
+# Using a different type of data set to generate a linear regression
+
+boatPresence <- rnorm(n=242,mean=3.3,sd=0.30)
+inflecPoints <- rnorm(n=242,mean=234.10,sd=232)
+
+ID <- 1:242
+
+reg_data <- data.frame(ID,boatPresence,inflecPoints)
+head(reg_data)
+str(reg_data)
+
+# -----------------------------------------------------
+# FUNCTION linreg_sum
+# description: generates a summary of linear regression analysis
+# inputs: two continuous variables in a data frame along with ID
+# outputs: linear regression summary
+#######################################################
+linreg_sum <- function(x=boatPresence,y=inflecPoints) {
+  reg_model <- lm(inflecPoints~boatPresence, data=reg_data)
+  summary(reg_model)
+  z <- unlist(summary(reg_model))
+  reg_stats <- list(intercept=z$coefficients1,
+                    slope=z$coefficients2,
+                    intercept_p=z$coefficients7,
+                    slope_p=z$coefficients8, # most common for signif
+                    r2=z$r.squared)
+  return(reg_stats)
+} # end of anova_sum
+# -----------------------------------------------------
+
+linreg_sum()
+
+# > linreg_sum()
+# $intercept
+# [1] 58.65596
+#
+# $slope
+# [1] 49.38302
+#
+# $intercept_p
+# [1] 0.7105408
+#
+# $slope_p
+# [1] 0.3018502
+#
+# $r2
+# [1] 0.004441044
+
+```
+# -----------------------------------------------------
+# FUNCTION regression_plot
+# description plots the data from the data frame
+# inputs: data frame of boat noise levels and inflection points
+# outputs: box plot showing inflection points as a function of boat noise levels
+#######################################################
+regression_plot <- function(x=reg_data) {
+  reg_data <- data.frame(ID,boatPresence,inflecPoints)
+  reg_plot <- ggplot(reg_data) +
+    aes(x=boatPresence,y=inflecPoints) +
+    geom_point() +
+    stat_smooth(method=lm,se=0.99) # default se=0.95
+  
+  return(print(reg_plot))
+  # function body
+  
+  
+} # end of plot_data
+# -----------------------------------------------------
+
+regression_plot()
+
+```
+
+
