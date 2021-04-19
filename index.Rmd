@@ -60,3 +60,6 @@ Using for loops, subsetting, comparing randomization tests to stasticial analyse
 
 [Homework 11](Homework_11.html)  
 Batch processing.
+
+[Homework 12](Homework_12.html)  
+Using ggplot to create graphs for my own data. Experimenting with different themes, theme base sizes, aesthetics, mappings, and faceting.
