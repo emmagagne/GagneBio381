@@ -74,8 +74,6 @@ p1 + theme_clean(base_size=9,
        x="Site",
        y="Root Mean Square of Ambient Noise in dB") +
   scale_fill_brewer(palette="Accent")
-
-# Rearranging the order to make pre-lockdown appear before during lockdown
 ```
 
 ![Box Plot with New Colors](boxplotcolor.png)
