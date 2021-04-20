@@ -57,7 +57,55 @@ p1 + theme_clean(base_size=9,
        y="Root Mean Square of Ambient Noise in dB") +
   scale_fill_brewer(palette="Accent")
 
-# Rearranging the order to make pre-lockdown appear before during lockdown
+# Making a color blind friendly graph
+p2 <- p1 + scale_fill_manual(values=c("blue","yellow"))
+plot(p2)
 
-# Creating a Series of Box Plots ----------------------------------
+p2_des <- colorblindr::edit_colors(p2, desaturate)
+plot(p2_des)
+
+# Using Faceting ----------------------------------
+
+m1 <- ggplot(data=dBwave_data_Only_RMS,
+             mapping=aes(x=Site,
+                         fill=Time,
+                         y=dBwave_data_Only_RMS$Hz1000)) +
+  geom_boxplot(position=position_dodge(-1))
+m1 + facet_grid(Site~Time)
+
+# give it some nicer labels
+
+m1 + facet_grid(Site~Time) +
+  theme_clean(base_size=10,
+              base_family="serif") +
+  labs(x="Site",
+       y="Root Mean Square of Ambient Noise in dB")
+
+# another way of faceting
+m1 <- ggplot(data=dBwave_data_Only_RMS,
+             mapping=(aes(x=Site,
+                          y=dBwave_data_Only_RMS$Hz1000,
+                          group=Site,
+                          fill=Time))) +
+  geom_boxplot(position=position_dodge(-1))
+
+m1 + facet_grid(.~Time) + labs(x="Site",
+                               y="Root Mean Square of Ambient Noise in dB")
+
+
+# Smooth Geom with the Data ----------------------------------
+
+# load properly formatted data
+library(readr)
+discrete_data <- read_csv("discretedata.csv")
+View(discrete_data)
+
+# Generating the plot, filling based on site
+p1 <- ggplot(data=discrete_data,
+            mapping=aes(x=discrete_data$`FrequencyRange(kHz)`,
+                         y=Frequency,
+                         group=Site,
+                         color=Site,)) +
+  geom_point() + geom_smooth()
+print(p1)
 
